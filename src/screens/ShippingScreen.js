@@ -209,7 +209,7 @@ function ShippingScreen(props) {
               <PhoneInput
                 inputStyle={{ width: "80px" }}
                 country={"in"}
-                // onClick={() => setGo(!go)}
+                onClick={() => setGo(!go)}
                 // className="relative  top-0 ml-2 bg-gray-500  font-semibold focus:outline-none"
               />
               <input

@@ -11,8 +11,8 @@ function UserOrders(props) {
   const [details, setDetails] = useState(false);
   const ordersUser = useSelector((state) => state.ordersUser);
   const { loading, error, orders } = ordersUser;
-  const orderUpdate = useSelector((state) => state.orderUpdate);
-  const { error: errorUP, loading: loadingUP, success } = orderUpdate;
+  // const orderUpdate = useSelector((state) => state.orderUpdate);
+  // const { error: errorUP, loading: loadingUP, success } = orderUpdate;
   // const [status, setStatus] = useState("");
   // const [orderId, setOrderId] = useState("");
   const [getStatus, setGetStatus] = useState({
@@ -38,7 +38,7 @@ function UserOrders(props) {
 
   useEffect(() => {
     dispatch(userOrders());
-  }, []);
+  }, [dispatch]);
   return loading ? (
     <LoadingBox />
   ) : error ? (
@@ -195,7 +195,7 @@ function UserOrders(props) {
               </div>
             </div>
             {order.status === "ordered" &&
-            moment(order.createAt).format("DD/MM/YYYY") ==
+            moment(order.createAt).format("DD/MM/YYYY") ===
               moment(Date.now()).format("DD/MM/YYYY") ? (
               <form
                 className="w-full  flex flex-col justify-center items-center"
@@ -224,31 +224,31 @@ function UserOrders(props) {
                 </button>
               </form>
             ) : order.status === "delivered" &&
-              (moment(order.createAt).format("DD/MM/YYYY") ==
+              (moment(order.createAt).format("DD/MM/YYYY") ===
                 moment(Date.now()).subtract("1", "day").format("DD/MM/YYYY") ||
-                moment(order.createAt).format("DD/MM/YYYY") ==
+                moment(order.createAt).format("DD/MM/YYYY") ===
                   moment(Date.now()).format("DD/MM/YYYY") ||
-                moment(order.createAt).format("DD/MM/YYYY") ==
+                moment(order.createAt).format("DD/MM/YYYY") ===
                   moment(Date.now())
                     .subtract("7", "day")
                     .format("DD/MM/YYYY") ||
-                moment(order.createAt).format("DD/MM/YYYY") ==
+                moment(order.createAt).format("DD/MM/YYYY") ===
                   moment(Date.now())
                     .subtract("6", "day")
                     .format("DD/MM/YYYY") ||
-                moment(order.createAt).format("DD/MM/YYYY") ==
+                moment(order.createAt).format("DD/MM/YYYY") ===
                   moment(Date.now())
                     .subtract("5", "day")
                     .format("DD/MM/YYYY") ||
-                moment(order.createAt).format("DD/MM/YYYY") ==
+                moment(order.createAt).format("DD/MM/YYYY") ===
                   moment(Date.now())
                     .subtract("4", "day")
                     .format("DD/MM/YYYY") ||
-                moment(order.createAt).format("DD/MM/YYYY") ==
+                moment(order.createAt).format("DD/MM/YYYY") ===
                   moment(Date.now())
                     .subtract("3", "day")
                     .format("DD/MM/YYYY") ||
-                moment(order.createAt).format("DD/MM/YYYY") ==
+                moment(order.createAt).format("DD/MM/YYYY") ===
                   moment(Date.now())
                     .subtract("2", "day")
                     .format("DD/MM/YYYY")) ? (

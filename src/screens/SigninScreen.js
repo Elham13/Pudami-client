@@ -94,7 +94,7 @@ function SigninScreen(props) {
               <a href="/auth/facebook" className="social-icon">
                 <i className="fa fa-facebook"></i>
               </a>
-              <a href="#" className="social-icon" href="/auth/google">
+              <a className="social-icon" href="/auth/google">
                 <i className="fa fa-google"></i>
               </a>
             </div>

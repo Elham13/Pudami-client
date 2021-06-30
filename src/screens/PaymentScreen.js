@@ -147,11 +147,12 @@ function PaymentScreen(props) {
     );
   };
   useEffect(() => {
+    setGo(go);
     if (success) {
       props.history.push(`/checkouts/order/${order._id}`);
       dispatch({ type: ORDER_CREATE_RESET });
     }
-  }, [success]);
+  }, [success, dispatch, go]);
   return (
     <div className="container text-sm md:text-lg mx-auto flex flex-col justify-start items-center space-y-3 text-gray-600">
       <img className="w-1/6" src={img} alt="logo" />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import img from "../logo.png";
 import DashCreate from "./Products/DashCreate";
 import DashCustomer from "./DashCustomer";
